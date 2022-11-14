@@ -72,6 +72,7 @@ img{
 .menu-list > li{
   position: relative;
   padding: 15px;
+  cursor: pointer;
 }
 .menu-list > li:hover{
   background-color: var(--dark-gray);
@@ -81,6 +82,8 @@ img{
 .menu-list li:hover .sub-menu-dropdown{
   visibility: visible;
   opacity: 1;
+  z-index: 100;
+  cursor: pointer;
 }
 .menu-list li .sub-menu-dropdown{
   position: absolute;
@@ -309,6 +312,10 @@ input:focus{
   width: 250px;
   border-radius: 40px;
 }
+.pupular-place-img{
+  height: 150px;
+  width: 250px;
+}
 .popular-place .place-decription{
   padding: 0 0 0 15px;
   font-size: 22px;
@@ -522,7 +529,7 @@ padding: 0px 15px;
 .img-content-post{
   border-radius: 5px;
   text-align: center;
-  /* height: 410px; */
+  height: 659px;
   width: 100%;
   /* width: 890px; */
 }
@@ -611,6 +618,7 @@ padding: 0px 15px;
       transform: translateY(0px)
   }
 }
+
 .text-title-readmore{
   font-family: "khmer-muol";
   font-size: 20px;
@@ -621,18 +629,14 @@ padding: 0px 15px;
 }
 /* Rotate */
 .col- img:hover{
-	-webkit-transform: rotate(10deg) scale(1.0);
-	transform: rotate(10deg) scale(1.0);
-	-webkit-transition: 1.3s ease-in-out;
+	transform: scale(1.1);
 	transition: 1.3s ease-in-out;
 }
-.col- img{
-	-webkit-transform: rotate(0) scale(1);
-	transform: rotate(0) scale(1);
-}
-/* .clv_btn{
+
+.clv_btn{
   text-align: center;
-} */
+  font-family: "khmer-muol";
+}
 .btn-readmore{
   text-align: center;
   padding-top: 12px;
@@ -651,7 +655,74 @@ padding: 0px 15px;
   background-color: lightsteelblue;
   transition: 2.0s;
 }
+.d-block{
+  height: 659px;
+}
+/*Animation of Silde*/
+.carousel-item {
+  transition: transform 0.6s;
+}
+ol.carousel-indicators li{
+  padding: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px solid rgb(158, 158, 158);
+  text-indent: 0;
+  overflow: hidden;
+  text-align: left;
+  position: relative;
+  letter-spacing: 1px;
+  background: rgb(158, 158, 158);
+  -webkit-font-smoothing: antialiased;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  margin-right: 5px;
+  -webkit-transition: all 0.5s cubic-bezier(0.22,0.81,0.01,0.99);
+  transition: all 0.5s cubic-bezier(0.22,0.81,0.01,0.99);
+  z-index: 10;
+  cursor:pointer;
+}
+ol.carousel-indicators li.active{
+  margin: 1px 5px 1px 1px;
+  box-shadow: 0 0 0 2px #fff;
+  background-color: transparent;
+  position: relative;
+  -webkit-transition: box-shadow 0.3s ease;
+  -moz-transition: box-shadow 0.3s ease;
+  -o-transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+ol.carousel-indicators li.active:before{
+  transform: scale(0.5);
+  background-color: #fff;
+  content:"";
+  position: absolute;
+  left:-1px;
+  top:-1px;
+  width:15px;
+  height: 15px;
+  border-radius: 50%;
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+#btn-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  }
+  .fas{
+    animation: bounce 3s infinite;
+  }
 /*End content-post*/
+
+
 /*Start Carlendar bar*/
 :root {
   --calendar-bg-color: #262829;
